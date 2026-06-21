@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天博体育 · 产品说明</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fbfbfa;
+            font-family: -apple-system, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+            color: #1e2024;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .page-wrapper {
+            flex: 1;
+            padding: 3rem 1.5rem 4rem;
+            max-width: 720px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* 标题层级 */
+        .section-label {
+            font-size: 0.8rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #8f95a3;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-top: 0.2rem;
+            margin-bottom: 1.8rem;
+            color: #101214;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 550;
+            margin: 2.4rem 0 0.8rem 0;
+            border-bottom: 1px solid #e7e9ed;
+            padding-bottom: 0.4rem;
+            letter-spacing: -0.01em;
+            color: #1a1d22;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 520;
+            margin: 1.6rem 0 0.4rem 0;
+            color: #262a30;
+        }
+
+        p {
+            margin: 0.8rem 0 1.2rem 0;
+            font-size: 1rem;
+            color: #2c2f36;
+        }
+
+        .intro-sub {
+            font-size: 1.05rem;
+            color: #3a3f4a;
+            margin-top: -0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        /* 卡片列表 – 极简留白 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 1.2rem 0 1rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.2rem 1.4rem;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.03);
+            border: 1px solid #f0f1f3;
+            transition: box-shadow 0.15s;
+        }
+
+        .feature-card strong {
+            display: inline-block;
+            font-weight: 560;
+            color: #0f1217;
+            margin-bottom: 0.15rem;
+        }
+
+        .feature-card p {
+            margin: 0.2rem 0 0 0;
+            font-size: 0.96rem;
+            color: #40444e;
+        }
+
+        /* 场景示意 */
+        .use-cases {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1rem;
+            margin: 1rem 0 1.8rem;
+            list-style: none;
+        }
+
+        .use-cases li {
+            background: #f3f4f6;
+            border-radius: 40px;
+            padding: 0.3rem 1.2rem;
+            font-size: 0.9rem;
+            color: #31353e;
+            font-weight: 450;
+            border: 1px solid #e6e8ec;
+            letter-spacing: 0.01em;
+        }
+
+        .faq-block {
+            background: #f8f9fa;
+            border-left: 3px solid #cdd0d6;
+            padding: 1rem 1.4rem;
+            margin: 1.8rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .faq-block p {
+            margin: 0.2rem 0;
+            font-size: 0.95rem;
+        }
+
+        .faq-block .q {
+            font-weight: 540;
+            color: #171a1f;
+        }
+
+        .faq-block .a {
+            color: #464b57;
+            margin-top: 0.1rem;
+        }
+
+        .note-box {
+            background: #ffffff;
+            border: 1px solid #e4e7ed;
+            padding: 1rem 1.3rem;
+            border-radius: 8px;
+            margin: 1.6rem 0 0.8rem;
+            font-size: 0.95rem;
+            color: #3f4450;
+        }
+
+        a {
+            color: #1e4c7a;
+            text-decoration: none;
+            border-bottom: 0.5px solid transparent;
+            transition: border-color 0.1s;
+            font-weight: 480;
+        }
+
+        a:hover {
+            border-bottom-color: #1e4c7a;
+        }
+
+        .footer-note {
+            margin-top: 3.5rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e4e7ed;
+            font-size: 0.85rem;
+            color: #6d7382;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .tagline {
+            font-weight: 380;
+            letter-spacing: 0.02em;
+        }
+
+        @media (min-width: 600px) {
+            body {
+                padding: 0 1rem;
+            }
+            .page-wrapper {
+                padding: 3.5rem 0 5rem;
+            }
+            h1 {
+                font-size: 2.6rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.9rem;
+            }
+            .feature-card {
+                padding: 1rem 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- hero / 摘要 -->
+        <div class="section-label">产品概要</div>
+        <h1>天博体育 · 定位与用途</h1>
+        <p class="intro-sub">
+            一个围绕体育赛事信息整合、观赛辅助及社区讨论而设计的平台，核心在于帮助用户快速识别内容结构并获取有效资讯。
+        </p>
+
+        <!-- 为什么用户需要这个介绍 —— 快速识别用途 -->
+        <p>
+            当新访问者打开 <a href="https://webs-tianbo.com">天博体育</a> 时，最直接的需求是理解站点提供什么、如何为自己所用。
+            本页面从实际使用场景出发，拆解平台的主要模块与特点，不夸大、不诱导，仅陈述功能轮廓与适用建议。
+        </p>
+
+        <!-- 亮点 / 特点 -->
+        <h2>功能亮点</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <strong>赛事信息聚合</strong>
+                <p>多联赛赛程、实时比分与数据概览，减少在不同站点之间切换的成本。</p>
+            </div>
+            <div class="feature-card">
+                <strong>内容分类明晰</strong>
+                <p>按项目、联赛、日期组织条目，便于定向浏览，而非信息流轰炸。</p>
+            </div>
+            <div class="feature-card">
+                <strong>社区观点参考</strong>
+                <p>用户可在部分板块查看或发布讨论，但平台不对个人观点做背书，请自行甄别。</p>
+            </div>
+            <div class="feature-card">
+                <strong>轻量界面偏好</strong>
+                <p>信息密度适中，不堆砌弹窗或强制注册，阅读体验偏向工具化。</p>
+            </div>
+        </div>
+
+        <!-- 使用建议 —— 更克制的说明 -->
+        <h2>使用建议</h2>
+        <p>
+            如果你是第一次接触 <a href="https://webs-tianbo.com">天博体育</a>，可以优先关注顶部导航或分类入口：那里通常按运动类型（足球、篮球、网球等）以及赛事状态（进行中、即将开始、已结束）进行索引。
+            对于深度数据需求，建议配合官方统计数据源交叉验证；社区内容中的个人分析仅代表发言者立场。
+        </p>
+        <p>
+            平台不提供任何形式的投注、博彩或金钱游戏接口，也不引导用户脱离网站进行交易。请保持理性，将网站作为信息参考工具之一。
+        </p>
+
+        <!-- 场景 + 可信提示组合 -->
+        <h2>典型场景</h2>
+        <ul class="use-cases">
+            <li>赛前查询对阵与近期战绩</li>
+            <li>实时追踪关键比分变化</li>
+            <li>赛后浏览讨论区简短复盘</li>
+            <li>横向对比不同联赛的积分形势</li>
+        </ul>
+
+        <!-- FAQ 摘要 -->
+        <h2>常见疑问</h2>
+        <div class="faq-block">
+            <p class="q">问：是否需要注册才能浏览大部分内容？</p>
+            <p class="a">基础赛事信息和比分数据通常无需登录即可查阅。部分讨论或个性化功能可能要求注册，详情参见站内说明。</p>
+        </div>
+        <div class="faq-block">
+            <p class="q">问：数据更新速度如何？</p>
+            <p class="a">平台尽力保证实时数据同步，但偶尔因第三方源延迟可能略有滞后。关键场次建议同时关注官方直播或文字直播。</p>
+        </div>
+
+        <!-- 可信但克制的访问说明 -->
+        <h2>访问说明</h2>
+        <div class="note-box">
+            <p><strong>使用边界</strong> · 本网站只作为体育资讯的整理与浏览工具，不构成任何投资、博彩建议。所有内容均来自公开信息或用户生成，平台不保证其绝对准确性。</p>
+            <p style="margin-top: 0.6rem;"><strong>链接指引</strong> · 如果你希望直接进入主站，可以通过 <a href="https://webs-tianbo.com">天博体育</a> 这一链接访问。该地址为平台当前唯一主域名，请确认网址后再进行浏览。</p>
+        </div>
+
+        <!-- 尾部 -->
+        <div class="footer-note">
+            <span class="tagline">力求清晰 · 避免误读</span>
+            <span>信息核实 · 自主判断</span>
+        </div>
+    </div>
+</body>
+</html>
